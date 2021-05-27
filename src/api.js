@@ -2,7 +2,7 @@ export const API_URL = 'https://sfilmes-backend.herokuapp.com';
 
 export function TOKEN_POST(body) {
   return {
-    url: API_URL + '/api/login',
+    url: API_URL + '/auth',
     options: {
       method: 'POST',
       headers: {
