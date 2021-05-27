@@ -8,7 +8,7 @@ export function TOKEN_POST(body) {
       headers: {
         'Content-Type': 'application/json',
       },
-      mode: 'cors',
+      mode: 'no-cors',
       body: JSON.stringify(body),
     },
   };
