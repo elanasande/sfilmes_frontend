@@ -14,6 +14,8 @@ const Login = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    console.log(email.value);
+    console.log(password.value);
     if (email.validate() && password.validate()) {
       userLogin(email.value, password.value);
     }

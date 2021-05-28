@@ -70,6 +70,11 @@ const Header = () => {
               User
             </Typography>
           </Link>
+          <Link to="/filmes" className={classes.link}>
+            <Typography variant="h6" className={classes.title}>
+              Filmes
+            </Typography>
+          </Link>
           <div className={classes.left}>
             {data && login === true ? (
               <Link className="link" to="/">

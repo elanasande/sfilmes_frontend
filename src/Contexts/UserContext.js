@@ -20,21 +20,32 @@ export const UserStorage = ({ children }) => {
   }
 
   async function userLogin(email, password) {
+    console.log(email);
+    console.log(password);
     try {
       setError(null);
       setLoading(true);
-      const { url, options } = TOKEN_POST({ email, password });
-      const tokenRes = await fetch(url, options);
-      if (!tokenRes.ok) throw new Error(`Error: ${tokenRes.statusText}`);
-      const { token } = await tokenRes.json();
-      window.localStorage.setItem('token', token);
-      await getUser(1);
-      navigate('/user');
+      fetch('https://sfilmes-backend.herokuapp.com/auth', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          window.localStorage.setItem('token', data.token);
+          console.log(data);
+        });
     } catch (err) {
       setError(err.message);
       setLogin(false);
     } finally {
       setLoading(false);
+      if (localStorage.token) navigate('/user');
     }
   }
   const userLogout = React.useCallback(

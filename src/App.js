@@ -7,6 +7,7 @@ import Login from './Components/Login/LoginRouter';
 import styles from './App.css';
 import { UserStorage } from './Contexts/UserContext';
 import User from './Components/User/UserRouter';
+import Filmes from './Components/Movie/MovieRouter';
 function App() {
   return (
     <div>
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/login/*" element={<Login />}></Route>
             <Route path="/user/*" element={<User />}></Route>
+            <Route path="/filmes/*" element={<Filmes />}></Route>
           </Routes>
           <Footer />
         </UserStorage>
