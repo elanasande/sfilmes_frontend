@@ -12,7 +12,7 @@ import { UserContext } from '../Contexts/UserContext';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginBottom: '1rem',
+    marginBottom: '0.2rem',
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -70,7 +70,7 @@ const Header = () => {
               User
             </Typography>
           </Link>
-          <Link to="/filmes" className={classes.link}>
+          <Link to="/filme" className={classes.link}>
             <Typography variant="h6" className={classes.title}>
               Filmes
             </Typography>

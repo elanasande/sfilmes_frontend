@@ -77,3 +77,20 @@ export function USER_UPDATE(id, name, job) {
     },
   };
 }
+
+export function REGISTER_MOVIE(body) {
+  return {
+    url: API_URL + '/filme',
+    options: {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: body.name,
+        duracao: body.duracao,
+      }),
+    },
+  };
+}
